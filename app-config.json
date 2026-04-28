@@ -1,0 +1,60 @@
+{
+  "appName": "Dynamic System Builder",
+  "theme": {
+    "primary": "#4f46e5",
+    "background": "#f9fafb"
+  },
+  "features": {
+    "auth": true,
+    "localization": true,
+    "csvImport": true
+  },
+  "models": [
+    {
+      "name": "Customer",
+      "userScoped": true,
+      "fields": [
+        { "name": "name", "type": "string", "required": true },
+        { "name": "email", "type": "string", "required": true },
+        { "name": "phone", "type": "string" },
+        { "name": "status", "type": "enum", "options": ["Active", "Inactive", "Lead"] }
+      ]
+    },
+    {
+      "name": "Product",
+      "userScoped": false,
+      "fields": [
+        { "name": "title", "type": "string", "required": true },
+        { "name": "price", "type": "number", "required": true },
+        { "name": "stock", "type": "number" }
+      ]
+    }
+  ],
+  "pages": [
+    {
+      "path": "/",
+      "title": "Dashboard",
+      "components": [
+        { "type": "hero", "title": "Welcome", "subtitle": "Manage your data seamlessly." }
+      ]
+    },
+    {
+      "path": "/customers",
+      "title": "Customers",
+      "model": "Customer",
+      "components": [
+        { "type": "table", "allowCsvImport": true },
+        { "type": "form" }
+      ]
+    },
+    {
+      "path": "/products",
+      "title": "Products",
+      "model": "Product",
+      "components": [
+        { "type": "table" },
+        { "type": "form" }
+      ]
+    }
+  ]
+}
