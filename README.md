@@ -29,3 +29,28 @@ Create a PostgreSQL database (locally or via Neon.tech/Supabase).
 Navigate into the `backend` folder and add your connection string to a `.env` file:
 ```env
 DATABASE_URL=postgresql://user:password@host:5432/dbname
+2. Start the Backend
+Open a terminal in the backend directory:
+
+bash
+cd backend
+npm install
+ts-node src/index.ts
+Note: Upon starting, the backend will connect to your database and automatically provision all necessary tables and endpoints.
+
+3. Start the Frontend
+Open a new terminal in the frontend directory:
+
+bash
+cd frontend
+npm install
+npm run dev
+Visit http://localhost:3000 to interact with your dynamically generated application!
+
+⚙️ Modifying the App (app-config.json)
+To change the app, you only need to edit app-config.json.
+
+Add a new object to the models array to instantly get a new Postgres table, full CRUD APIs, and UI tables/forms.
+Change the theme block to instantly update the application's color scheme.
+Toggle features to enable or disable authentication or CSV uploading.
+Built for the Full Stack Developer Internship Demo Task.
