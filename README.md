@@ -1,4 +1,4 @@
-# Dynamic Application Generator
+# Dynamic Application Generato
 
 A full-stack, configuration-driven application generator that dynamically builds a complete web application (React frontend + Node.js/Express backend + PostgreSQL database) from a single JSON configuration file.
 
